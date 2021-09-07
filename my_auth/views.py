@@ -62,7 +62,8 @@ class TokenViewSet(viewsets.ModelViewSet):
         headers = self.get_success_headers(serializer.data)
         email = serializer.validated_data.get('email')
         confirmation_code = serializer.validated_data.get('confirmation_code')
-        user = get_object_or_404(User, email=email, confirmation_code=confirmation_code)
+        user = get_object_or_404(User, email=email,
+                                 confirmation_code=confirmation_code)
         token = get_user_token(user)
 
         return Response({'token': token},

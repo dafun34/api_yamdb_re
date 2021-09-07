@@ -1,9 +1,6 @@
 from rest_framework import viewsets
 import django_filters
-from rest_framework.decorators import action
 from rest_framework.generics import get_object_or_404
-from rest_framework.permissions import AllowAny
-
 from users.models import User
 from users.serializers import UserSerializer
 from users.permissions import IsOwnerOrAdmin, IsAuthenticated

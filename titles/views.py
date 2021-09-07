@@ -5,7 +5,7 @@ from rest_framework.generics import get_object_or_404
 from rest_framework.mixins import (CreateModelMixin, DestroyModelMixin,
                                    ListModelMixin)
 from rest_framework.pagination import PageNumberPagination
-from rest_framework.permissions import (IsAuthenticatedOrReadOnly, AllowAny)
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.viewsets import GenericViewSet, ModelViewSet
 from rest_framework.filters import SearchFilter
 from .filters import TitleFilter
@@ -15,7 +15,6 @@ from .permissions import (IsAdminOrReadOnly, IsAuthor, IsModerator,
 from .serializers import (CategorySerializer, CommentSerializer,
                           GenreSerializer, ReviewSerializer,
                           TitleCreateSerializer, TitleListSerializer)
-
 
 
 class CreateListDestroyViewSet(ListModelMixin,
