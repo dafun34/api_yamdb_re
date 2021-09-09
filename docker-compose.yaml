@@ -11,7 +11,7 @@ services:
   app:
     build: .
     restart: always
-    command: gunicorn api_yamdb.wsgi:application --bind 0.0.0.0:8000
+    
   
     volumes:
       - static_value:/code/static/
